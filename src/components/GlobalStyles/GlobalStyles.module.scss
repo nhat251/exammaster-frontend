@@ -1,0 +1,42 @@
+@import 'normalize.css';
+
+:root {
+  --primary: #ff3b5c;
+  --default-layout-header-height: 60px;
+  --default-layout-width: 1232px;
+  --black: #000;
+  --white: #fff;
+  --text-color: #333;
+  --blue-color: #1d4ed8;
+  --blue-background-color: hsl(214.09deg 95.65% 90.98%);
+  --background-color: #f9fafb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  text-decoration: none;
+  color: var(--text-color);
+}
