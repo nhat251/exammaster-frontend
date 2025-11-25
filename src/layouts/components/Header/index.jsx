@@ -4,7 +4,10 @@ import styles from './Header.module.scss';
 import { NavList, LogoApp, SearchBar } from '~/components/commons/';
 import { Avatar } from '@mui/material';
 import images from '~/assets/images';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '~/hooks';
+import { ME_ENDPOINT } from '~/constants/my_const';
+import { refresh } from '~/services/authService';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +19,20 @@ function Header() {
     { path: '/contact', text: 'Liên hệ' },
   ];
 
-  const user = { username: 'Nsntfoz', avatar: images.defaultAvatar, balance: 2450 };
+  const { user, handleLogout } = useAuth();
+  const navigate = useNavigate();
+
+  const login = () => {
+    navigate('/login');
+  };
+
+  const register = () => {
+    navigate('/register');
+  };
+
+  const logout = async () => {
+    await handleLogout();
+  };
 
   return (
     <div className={cx('wrapper')}>
@@ -41,12 +57,16 @@ function Header() {
                   <img src={images.points_badge} alt="" />
                   {user.balance}
                 </NavLink>
-                <Avatar sx={{ width: '2rem', height: '2rem' }} alt={user.username} src={user.avatar} />
+                <Avatar sx={{ width: '2rem', height: '2rem' }} alt={user.username} src={user.avatar} onClick={logout} />
               </>
             ) : (
               <>
-                <button className={cx('custom-login')}>Log in</button>
-                <button className={cx('custom-register')}>Register</button>
+                <button className={cx('custom-login')} onClick={login}>
+                  Log in
+                </button>
+                <button className={cx('custom-register')} onClick={refresh}>
+                  Register
+                </button>
               </>
             )}
           </div>

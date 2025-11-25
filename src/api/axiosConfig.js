@@ -35,6 +35,7 @@ api.interceptors.response.use(
 
         try {
           const { accessToken } = await api.post(REFRESH_TOKEN_ENDPOINT).then((res) => res.data.result);
+          // const accessToken = await refresh();
 
           localStorage.setItem(ACCESS_TOKEN_KEY_STORAGE, accessToken);
 

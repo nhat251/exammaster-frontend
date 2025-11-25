@@ -1,4 +1,10 @@
-import { LOGIN_ENDPOINT, ME_ENDPOINT, LOGOUT_ENDPOINT, REGISTER_ENDPOINT } from '~/constants/my_const';
+import {
+  LOGIN_ENDPOINT,
+  ME_ENDPOINT,
+  LOGOUT_ENDPOINT,
+  REGISTER_ENDPOINT,
+  REFRESH_TOKEN_ENDPOINT,
+} from '~/constants/my_const';
 import callApi from '~/api/axiosConfig';
 
 const register = async (fullName, username, email, password) => {
@@ -21,4 +27,11 @@ const logout = async () => {
   await callApi({ path: LOGOUT_ENDPOINT, method: 'POST' });
 };
 
-export { register, login, fetchMe, logout };
+const refresh = async () => {
+  console.log('refresh nè');
+
+  const { accessToken } = await callApi({ path: REFRESH_TOKEN_ENDPOINT, method: 'POST' }).then((res) => res.result);
+  return accessToken;
+};
+
+export { register, login, fetchMe, logout, refresh };

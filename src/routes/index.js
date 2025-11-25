@@ -1,15 +1,18 @@
 import { HeaderOnlyLayout } from '~/layouts';
-import { Home } from '~/pages';
+import { Home, Login, MyLearning, Register } from '~/pages';
 
 // public routes
 const publicRoutes = [
   { path: '/', component: Home },
-  { path: '/my-learning', component: Home },
+  { path: '/login', component: Login },
+  { path: '/register', component: Register },
   { path: '/contribute', component: Home, layout: HeaderOnlyLayout },
   { path: '/contact', component: Home },
-  { path: '/wallet', component: Home },
 ];
 
-const privateRoutes = [];
+const privateRoutes = [
+  { path: '/my-learning', component: MyLearning },
+  { path: '/wallet', component: Home },
+];
 
 export { publicRoutes, privateRoutes };
