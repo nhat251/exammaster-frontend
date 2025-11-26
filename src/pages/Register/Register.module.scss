@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-  background: var(--white);
+  background: var(white);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   width: 100%;
@@ -69,7 +69,7 @@
     background-color: #f9fafb;
 
     &:focus {
-      background-color: var(--white);
+      background-color: var(white);
       border-color: var(--blue-color);
       box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
     }
@@ -95,7 +95,7 @@
 .submitButton {
   padding: 11px 16px;
   background: linear-gradient(135deg, var(--blue-color) 0%, #667eea 100%);
-  color: var(--white);
+  color: var(white);
   border: none;
   border-radius: 8px;
   font-size: 15px;

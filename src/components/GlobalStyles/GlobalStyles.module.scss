@@ -1,15 +1,16 @@
 @import 'normalize.css';
 
 :root {
-  --primary: #ff3b5c;
+  --primary: linear-gradient(to right, #3b82f6, #1d4ed8);
   --default-layout-header-height: 60px;
   --default-layout-width: 1232px;
-  --black: #000;
-  --white: #fff;
   --text-color: #333;
   --blue-color: #1d4ed8;
   --blue-background-color: hsl(214.09deg 95.65% 90.98%);
   --background-color: #f9fafb;
+
+  --white: white;
+  --black: black;
 }
 
 * {

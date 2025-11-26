@@ -1,3 +1,17 @@
 .wrapper {
   width: 100vw;
 }
+
+.container {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: var(--default-layout-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -8,6 +8,7 @@ const publicRoutes = [
   { path: '/register', component: Register },
   { path: '/contribute', component: Home, layout: HeaderOnlyLayout },
   { path: '/contact', component: Home },
+  { path: '/exams', component: Home },
 ];
 
 const privateRoutes = [

@@ -1,13 +1,12 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
-import { NavList, LogoApp, SearchBar } from '~/components/commons/';
+import { NavList, LogoApp, SearchBar, Button } from '~/components/commons/';
 import { Avatar } from '@mui/material';
 import images from '~/assets/images';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAuth } from '~/hooks';
-import { ME_ENDPOINT } from '~/constants/my_const';
-import { refresh } from '~/services/authService';
+import { formatNumber } from '~/utils';
 
 const cx = classNames.bind(styles);
 
@@ -17,18 +16,10 @@ function Header() {
     { path: '/my-learning', text: 'Đang học' },
     { path: '/contribute', text: 'Đóng góp' },
     { path: '/contact', text: 'Liên hệ' },
+    { path: '/exams', text: 'Tất cả đề' },
   ];
 
   const { user, handleLogout } = useAuth();
-  const navigate = useNavigate();
-
-  const login = () => {
-    navigate('/login');
-  };
-
-  const register = () => {
-    navigate('/register');
-  };
 
   const logout = async () => {
     await handleLogout();
@@ -55,18 +46,24 @@ function Header() {
               <>
                 <NavLink className={cx('points-badge')} to="/wallet">
                   <img src={images.points_badge} alt="" />
-                  {user.balance}
+                  {formatNumber(user.balance)}
                 </NavLink>
                 <Avatar sx={{ width: '2rem', height: '2rem' }} alt={user.username} src={user.avatar} onClick={logout} />
               </>
             ) : (
               <>
-                <button className={cx('custom-login')} onClick={login}>
+                <Button small outline className={cx('custom-login')} to="/login">
                   Log in
-                </button>
-                <button className={cx('custom-register')} onClick={refresh}>
+                </Button>
+                <Button
+                  small
+                  contained
+                  textColor="var(--white) !important"
+                  className={cx('custom-register')}
+                  to="/register"
+                >
                   Register
-                </button>
+                </Button>
               </>
             )}
           </div>
