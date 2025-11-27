@@ -3,7 +3,8 @@ import classNames from 'classnames/bind';
 
 import styles from './Banner.module.scss';
 import { Button } from '~/components/commons';
-import images from '~/assets/images';
+import BattleIcon from '~/assets/images/battle_icon.svg?react';
+
 const cx = classNames.bind(styles);
 
 function Banner() {
@@ -24,7 +25,7 @@ function Banner() {
           Bắt đầu ngay
         </Button>
         <Button
-          leftIcon={<img src={images.battle_icon} alt="battle" />}
+          leftIcon={<BattleIcon className={cx('battle-icon')} />}
           outline
           textColor="var(--white) !important"
           className={cx('battle-mode')}
