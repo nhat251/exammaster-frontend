@@ -7,10 +7,12 @@
   --text-color: #333;
   --blue-color: #1d4ed8;
   --blue-background-color: hsl(214.09deg 95.65% 90.98%);
-  --background-color: #f9fafb;
-
+  --background-color: #f5f5f5;
   --white: white;
   --black: black;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 * {
@@ -24,10 +26,7 @@ html {
 }
 
 body {
-  line-height: 1.5;
   text-rendering: optimizeSpeed;
-  color: var(--text-color);
-  background-color: var(--background-color);
 }
 
 button,

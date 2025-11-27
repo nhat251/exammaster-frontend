@@ -1,0 +1,36 @@
+.wrapper {
+  --progress-text-width: 2rem;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  .progress-text {
+    width: var(--progress-text-width);
+  }
+}
+
+.background {
+  width: calc(100% - var(--progress-text-width));
+  height: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+}
+
+.low {
+  background-color: red;
+}
+
+.medium {
+  background-color: yellowgreen;
+}
+
+.high {
+  background-color: green;
+}
