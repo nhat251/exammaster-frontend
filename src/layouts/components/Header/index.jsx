@@ -30,7 +30,7 @@ function Header() {
       <header className={cx('header-inner')}>
         <div className={cx('header-left')}>
           <div>
-            <LogoApp minimal={false} />
+            <LogoApp />
           </div>
           <div>
             <SearchBar />

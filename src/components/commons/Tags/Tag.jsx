@@ -13,7 +13,7 @@ function Tag({ name, bgColor, textColor, isMore = false }) {
   if (textColor) customStyle.textColor = textColor;
 
   if (isMore) {
-    customStyle.background = '#e5e7eb'; // màu nhạt hơn
+    customStyle.background = 'var(--grey)'; // màu nhạt hơn
     customStyle.color = '#6b7280'; // xám hơn
     customStyle.fontWeight = '600';
   }

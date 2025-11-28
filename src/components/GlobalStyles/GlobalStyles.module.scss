@@ -3,6 +3,7 @@
 :root {
   --primary: linear-gradient(to right, #3b82f6, #1d4ed8);
   --default-layout-header-height: 60px;
+  --default-layout-footer-height: 326px;
   --default-layout-width: 1232px;
   --text-color: #333;
   --blue-color: #1d4ed8;
@@ -10,6 +11,7 @@
   --background-color: #f5f5f5;
   --white: white;
   --black: black;
+  --grey: #e5e7eb;
 
   background-color: var(--background-color);
   color: var(--text-color);
@@ -40,4 +42,8 @@ input,
 a[href] {
   text-decoration: none;
   color: var(--text-color);
+}
+
+p {
+  color: #6b7280;
 }

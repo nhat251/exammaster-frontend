@@ -5,8 +5,8 @@
 }
 
 .logo {
-  min-width: 2rem;
-  min-height: 2rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
   background-color: #3b82f6;
   display: flex;
   justify-content: center;
@@ -14,8 +14,8 @@
   border-radius: 0.5rem;
 
   & img {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
@@ -26,6 +26,7 @@
   & .app-name {
     font-weight: bold;
     line-height: normal;
+    font-size: 1.5rem;
   }
 
   & .app-slogan {

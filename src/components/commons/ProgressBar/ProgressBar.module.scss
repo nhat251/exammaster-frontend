@@ -14,7 +14,7 @@
 .background {
   width: calc(100% - var(--progress-text-width));
   height: 0.5rem;
-  background-color: #e5e7eb;
+  background-color: var(--grey);
   border-radius: 9999px;
   overflow: hidden;
 }

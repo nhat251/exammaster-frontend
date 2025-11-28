@@ -11,6 +11,10 @@
   flex-direction: column;
   gap: 1rem;
 
+  p {
+    color: white;
+  }
+
   & .title {
     margin: 0;
   }

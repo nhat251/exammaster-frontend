@@ -27,3 +27,5 @@ export const ACCESS_TOKEN_KEY_STORAGE = 'ACCESS_TOKEN';
 //const
 export const APP_NAME = 'Exam Master';
 export const APP_SLOGAN = 'Luyện đề - Chinh phục kỳ thi';
+export const FOOTER_TAG_LINE = 'Nền tảng luyện thi thông minh với AI, thi đấu và học nhóm.';
+export const COPY_RIGHT = '© 2024 ExamMaster. All rights reserved.';
