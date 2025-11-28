@@ -36,6 +36,7 @@
     .header {
       display: flex;
       align-items: center;
+      height: 2rem;
 
       .favourite-icon {
         margin-left: auto;
@@ -60,22 +61,24 @@
     width: 100%;
   }
 
-  .duration-progress {
+  .time {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
 
-  .duration {
-    display: inline-flex;
-    gap: 0.2rem;
+    .wrapper-time {
+      display: inline-flex;
+      gap: 0.2rem;
 
-    .clock-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      .wrapper-icon {
+        height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .due-time {
+      margin-left: auto;
     }
   }
 }

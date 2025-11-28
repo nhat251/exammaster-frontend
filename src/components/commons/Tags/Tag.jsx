@@ -6,7 +6,7 @@ import styles from './Tags.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Tag({ tagString, bgColor, textColor, isMore = false }) {
+function Tag({ name, bgColor, textColor, isMore = false }) {
   const customStyle = [];
 
   if (bgColor) customStyle.background = bgColor;
@@ -20,7 +20,7 @@ function Tag({ tagString, bgColor, textColor, isMore = false }) {
 
   return (
     <div className={cx('tag-item')} style={customStyle}>
-      {tagString}
+      {name}
     </div>
   );
 }

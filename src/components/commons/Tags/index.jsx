@@ -14,9 +14,9 @@ function Tags({ tags }) {
     <>
       <div className={cx('wrapper')}>
         {visibleTags.map((tag) => (
-          <Tag key={tag.tagId} tagString={tag.tagString} />
+          <Tag key={tag.id} name={tag.name} />
         ))}
-        {remainingCount > 0 && <Tag tagString={`+${remainingCount}`} isMore />}
+        {remainingCount > 0 && <Tag name={`+${remainingCount}`} isMore />}
       </div>
     </>
   );

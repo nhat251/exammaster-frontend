@@ -8,6 +8,10 @@ export const LOGOUT_ENDPOINT = 'auth/logout';
 export const ME_ENDPOINT = 'users/my-info';
 export const GET_USER_LIST_ENDPOINT = 'users/paging';
 
+export const GET_UNFINISHED_EXAMS_ENDPOINT = 'exams/list/unfinished';
+export const MARK_AS_FAVOURITE_ENDPOINT = 'exams/mark-as-favourited';
+export const UNMARK_AS_FAVOURITE_ENDPOINT = 'exams/unmark-as-favourited';
+
 // actions types
 export const SET_USER_TYPE = 'set_user';
 export const LOGOUT_TYPE = 'logout';
