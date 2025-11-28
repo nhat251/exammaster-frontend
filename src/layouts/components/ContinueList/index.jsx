@@ -8,7 +8,7 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { fetchUnFinishedExams, unMarkAsFavourite, markAsFavourite } from '~/services/examService';
-import { Button, CardBorder, ProgressBar, Tags } from '~/components/commons';
+import { Button, CardBorder, ProgressBar, Tags, TextIcon } from '~/components/commons';
 import { formatExpire } from '~/utils';
 import { useAuth } from '~/hooks';
 
@@ -16,7 +16,6 @@ const cx = classNames.bind(styles);
 
 function ContinueList({ title }) {
   const [unfinishExamPageResult, setUnfinishExamPageResult] = useState([]);
-
   const { user } = useAuth();
 
   const toggleMarkFavourite = async (attemp) => {
@@ -40,7 +39,7 @@ function ContinueList({ title }) {
         setUnfinishExamPageResult([]);
         return;
       }
-      const unfinishexam = await fetchUnFinishedExams({ page: 1, size: 2 });
+      const unfinishexam = await fetchUnFinishedExams({ page: 1, size: 3 });
       if (unfinishexam) {
         setUnfinishExamPageResult(unfinishexam.items);
       }
@@ -62,7 +61,7 @@ function ContinueList({ title }) {
                 <div className={cx('item')}>
                   <div className={cx('header')}>
                     <div className={cx('tags')}>
-                      <Tags tags={attemp.tags} />
+                      <Tags tags={attemp.tags} maxVisible={3} />
                     </div>
                     <Tooltip placement="top" title="Mark as favourite exam" arrow>
                       <div onClick={() => toggleMarkFavourite(attemp)} className={cx('favourite-icon')}>
@@ -81,19 +80,12 @@ function ContinueList({ title }) {
                   </div>
 
                   <div className={cx('time')}>
-                    <div className={cx('wrapper-time')}>
-                      <div className={cx('wrapper-icon')}>
-                        <Clock style={{ width: '1rem', height: '1rem' }} />
-                      </div>
-                      <p>{attemp.duration} min</p>
-                    </div>
-
-                    <div className={cx('wrapper-time', 'due-time')}>
-                      <div className={cx('wrapper-icon')}>
-                        <Hourglass style={{ width: '1rem', height: '1rem' }} />
-                      </div>
-                      <p>{formatExpire(attemp.expiredAt)}</p>
-                    </div>
+                    <TextIcon leftIcon={Clock} text={`${attemp.duration} phút`} />
+                    <TextIcon
+                      leftIcon={Hourglass}
+                      text={formatExpire(attemp.expiredAt)}
+                      customStyle={{ marginLeft: 'auto' }}
+                    />
                   </div>
 
                   <div className={cx('footer')}>

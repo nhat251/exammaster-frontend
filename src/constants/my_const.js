@@ -12,6 +12,8 @@ export const GET_UNFINISHED_EXAMS_ENDPOINT = 'exams/list/unfinished';
 export const MARK_AS_FAVOURITE_ENDPOINT = 'exams/mark-as-favourited';
 export const UNMARK_AS_FAVOURITE_ENDPOINT = 'exams/unmark-as-favourited';
 
+export const GET_COLLECTIONS_ENDPOIND = 'exams/collections';
+
 // actions types
 export const SET_USER_TYPE = 'set_user';
 export const LOGOUT_TYPE = 'logout';

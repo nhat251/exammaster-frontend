@@ -1,17 +1,12 @@
 .wrapper {
   margin-top: 1rem;
 
-  p {
-    color: #6b7280;
-  }
-
   .section-title {
     margin-bottom: 1rem;
   }
 
   .desciption {
     overflow: hidden;
-    color: #6b7280;
     height: 3rem;
 
     display: -webkit-box;
@@ -49,6 +44,7 @@
 
         &:hover {
           background-color: var(--background-color);
+          cursor: pointer;
         }
       }
       .marked {
@@ -64,22 +60,6 @@
   .time {
     display: flex;
     align-items: center;
-
-    .wrapper-time {
-      display: inline-flex;
-      gap: 0.2rem;
-
-      .wrapper-icon {
-        height: 1.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-
-    .due-time {
-      margin-left: auto;
-    }
   }
 }
 

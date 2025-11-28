@@ -1,0 +1,15 @@
+.wrapper {
+  display: inline-flex;
+  gap: 0.2rem;
+
+  .icon {
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.full {
+  display: flex !important;
+}

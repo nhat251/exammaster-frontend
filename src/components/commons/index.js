@@ -5,3 +5,4 @@ export { default as Button } from '~/components/commons/Button';
 export { default as CardBorder } from '~/components/commons/CardBorder';
 export { default as ProgressBar } from '~/components/commons/ProgressBar';
 export { default as Tags } from '~/components/commons/Tags';
+export { default as TextIcon } from '~/components/commons/TextIcon';

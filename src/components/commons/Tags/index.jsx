@@ -6,16 +6,21 @@ import React from 'react';
 import Tag from './Tag';
 
 const cx = classNames.bind(styles);
-function Tags({ tags }) {
-  const visibleTags = tags.slice(0, 2);
+
+function Tags({ tags, prefix, maxVisible }) {
+  const visibleTags = tags.slice(0, maxVisible);
   const remainingCount = tags.length - visibleTags.length;
 
   return (
     <>
       <div className={cx('wrapper')}>
-        {visibleTags.map((tag) => (
-          <Tag key={tag.id} name={tag.name} />
-        ))}
+        {visibleTags.map((tag) => {
+          let name = tag.name;
+          if (prefix) {
+            name = `${prefix}${name}`;
+          }
+          return <Tag key={tag.id} name={name} />;
+        })}
         {remainingCount > 0 && <Tag name={`+${remainingCount}`} isMore />}
       </div>
     </>
