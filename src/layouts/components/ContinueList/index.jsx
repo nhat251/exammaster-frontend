@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { fetchUnFinishedExams, unMarkAsFavourite, markAsFavourite } from '~/services/examService';
 import { Button, CardBorder, ProgressBar, Tags, TextIcon } from '~/components/commons';
-import { formatExpire } from '~/utils';
+import { formatExpire, formatNumber } from '~/utils';
 import { useAuth } from '~/hooks';
 
 const cx = classNames.bind(styles);
@@ -113,7 +113,7 @@ function ContinueList({ title }) {
                   </div>
 
                   <div className={cx('footer')}>
-                    <p className={cx('price')}>{attemp.price} points</p>
+                    <p className={cx('price')}>{formatNumber(attemp.price)} points</p>
 
                     <Button
                       small
