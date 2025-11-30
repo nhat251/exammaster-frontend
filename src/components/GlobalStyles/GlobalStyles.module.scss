@@ -3,14 +3,18 @@
 :root {
   --primary: linear-gradient(to right, #3b82f6, #1d4ed8);
   --default-layout-header-height: 60px;
+  --default-layout-footer-height: 326px;
   --default-layout-width: 1232px;
   --text-color: #333;
   --blue-color: #1d4ed8;
   --blue-background-color: hsl(214.09deg 95.65% 90.98%);
-  --background-color: #f9fafb;
-
+  --background-color: #f5f5f5;
   --white: white;
   --black: black;
+  --grey: #e5e7eb;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 * {
@@ -24,10 +28,8 @@ html {
 }
 
 body {
-  line-height: 1.5;
   text-rendering: optimizeSpeed;
-  color: var(--text-color);
-  background-color: var(--background-color);
+  overflow-x: hidden;
 }
 
 button,
@@ -40,4 +42,8 @@ input,
 a[href] {
   text-decoration: none;
   color: var(--text-color);
+}
+
+p {
+  color: #6b7280;
 }

@@ -4,8 +4,8 @@
   justify-content: center;
   font-weight: 700;
   min-width: 100px;
-  padding: 9px 16px;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   border: 1px solid transparent;
   cursor: pointer;
   user-select: none;
@@ -70,10 +70,10 @@
 
 .small {
   min-width: 88px;
-  padding: 4px 16px;
+  padding: 0.25rem 1rem;
 }
 
 .large {
   min-width: 140px;
-  padding: 14px 16px;
+  padding: 0.9rem 1rem;
 }

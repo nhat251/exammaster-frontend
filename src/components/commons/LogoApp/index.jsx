@@ -7,7 +7,7 @@ import images from '~/assets/images';
 import { APP_NAME, APP_SLOGAN } from '~/constants/my_const';
 
 const cx = classNames.bind(styles);
-function LogoApp({ minimal = true }) {
+function LogoApp({ minimal = false }) {
   return (
     <Link className={cx('wrapper')} to="/">
       <div className={cx('logo')}>

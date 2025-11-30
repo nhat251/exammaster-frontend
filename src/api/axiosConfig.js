@@ -55,8 +55,9 @@ api.interceptors.response.use(
   },
 );
 
-const callApi = async ({ path, method = 'GET', data, config }) => {
+const callApi = async ({ path, method = 'GET', data, params, config }) => {
   try {
+    config = { ...config, params };
     let response;
 
     switch (method.toUpperCase()) {
