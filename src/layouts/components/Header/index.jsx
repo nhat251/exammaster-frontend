@@ -44,9 +44,9 @@ function Header() {
           <div className={cx('user-info')}>
             {user ? (
               <>
-                <NavLink className={cx('points-badge')} to="/wallet">
+                <NavLink className={cx('points-badge')} to="/leaderboard">
                   <img src={images.points_badge} alt="" />
-                  {formatNumber(user.balance)}
+                  {formatNumber(user.totalPoints)}
                 </NavLink>
                 <Avatar sx={{ width: '2rem', height: '2rem' }} alt={user.username} src={user.avatar} onClick={logout} />
               </>

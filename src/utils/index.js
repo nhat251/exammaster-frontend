@@ -1,5 +1,6 @@
 export function formatNumber(value) {
-  return new Intl.NumberFormat('vi-VN').format(value).replace(/\./g, ',');
+  return value.toLocaleString('en-US');
+  // return new Intl.NumberFormat('vi-VN').format(value).replace(/\./g, ',');
 }
 
 export const formatLocalTime = (utcString) => {

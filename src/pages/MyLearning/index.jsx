@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import callApi from '~/api/axiosConfig';
-import { GET_USER_LIST_ENDPOINT } from '~/constants/my_const';
+import { GET_TOP_USER_ENDPOINT } from '~/constants/my_const';
 import { useAuth } from '~/hooks';
 
 function MyLearning() {
@@ -9,11 +9,10 @@ function MyLearning() {
   const [list, setList] = useState([]);
   useEffect(() => {
     const init = async () => {
-      const response = await callApi({ path: GET_USER_LIST_ENDPOINT, method: 'POST', data: {} });
-      const pageResult = response.result;
-      console.log(pageResult);
+      const response = await callApi({ path: GET_TOP_USER_ENDPOINT, params: { page: 1, size: 3 } });
+      const paged = response.result;
 
-      setList(pageResult.items);
+      setList(paged.items);
     };
     init();
   }, []);

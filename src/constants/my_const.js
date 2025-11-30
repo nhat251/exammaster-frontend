@@ -6,7 +6,7 @@ export const REGISTER_ENDPOINT = 'auth/register';
 export const REFRESH_TOKEN_ENDPOINT = 'auth/refresh-token';
 export const LOGOUT_ENDPOINT = 'auth/logout';
 export const ME_ENDPOINT = 'users/my-info';
-export const GET_USER_LIST_ENDPOINT = 'users/paging';
+export const GET_TOP_USER_ENDPOINT = 'leaderboards/top';
 
 export const GET_UNFINISHED_EXAMS_ENDPOINT = 'exams/list/unfinished';
 export const MARK_AS_FAVOURITE_ENDPOINT = 'exams/mark-as-favourited';

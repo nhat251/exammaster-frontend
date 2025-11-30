@@ -1,16 +1,12 @@
 import classNames from 'classnames/bind';
 import styles from './ContinueList.module.scss';
 
-import { useEffect, useState } from 'react';
-import { Clock, Hourglass } from 'lucide-react';
-import { Tooltip, Snackbar, Alert } from '@mui/material';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useCallback, useEffect, useState } from 'react';
+import { Snackbar, Alert } from '@mui/material';
 
 import { fetchUnFinishedExams, unMarkAsFavourite, markAsFavourite } from '~/services/examService';
-import { Button, CardBorder, ProgressBar, Tags, TextIcon } from '~/components/commons';
-import { formatExpire, formatNumber } from '~/utils';
 import { useAuth } from '~/hooks';
+import ContinueItem from './ContinueItem';
 
 const cx = classNames.bind(styles);
 
@@ -30,7 +26,7 @@ function ContinueList({ title }) {
     setSnackbar({ ...snackbar, open: false });
   };
 
-  const toggleMarkFavourite = async (attemp) => {
+  const toggleMarkFavourite = useCallback(async (attemp) => {
     try {
       let message;
       if (attemp.isFavourite) {
@@ -55,7 +51,7 @@ function ContinueList({ title }) {
         severity: 'error',
       });
     }
-  };
+  }, []);
 
   useEffect(() => {
     const initHomePage = async () => {
@@ -79,55 +75,7 @@ function ContinueList({ title }) {
         <h2 className={cx('section-title')}>{title}</h2>
         <div className={cx('continue-items')}>
           {unfinishExamPageResult.map((attemp) => {
-            const progress = Math.round((attemp.completedCount / attemp.totalQuestion) * 100);
-            return (
-              <CardBorder key={attemp.attempId}>
-                <div className={cx('item')}>
-                  <div className={cx('header')}>
-                    <div className={cx('tags')}>
-                      <Tags tags={attemp.tags} maxVisible={3} />
-                    </div>
-                    <Tooltip placement="top" title="Mark as favourite exam" arrow>
-                      <div onClick={() => toggleMarkFavourite(attemp)} className={cx('favourite-icon')}>
-                        <FontAwesomeIcon icon={faBookmark} className={attemp.isFavourite ? cx('marked') : ''} />
-                      </div>
-                    </Tooltip>
-                  </div>
-
-                  <h3>{attemp.title}</h3>
-                  <Tooltip title={attemp.description} placement="top" arrow>
-                    <p className={cx('desciption')}>{attemp.description}</p>
-                  </Tooltip>
-
-                  <div className={cx('progress-bar')}>
-                    <ProgressBar progress={progress} />
-                  </div>
-
-                  <div className={cx('time')}>
-                    <TextIcon leftIcon={Clock} text={`${attemp.duration} phút`} />
-                    <TextIcon
-                      leftIcon={Hourglass}
-                      text={formatExpire(attemp.expiredAt)}
-                      customStyle={{ marginLeft: 'auto' }}
-                    />
-                  </div>
-
-                  <div className={cx('footer')}>
-                    <p className={cx('price')}>{formatNumber(attemp.price)} points</p>
-
-                    <Button
-                      small
-                      contained
-                      textColor="var(--white) !important"
-                      style={{ fontWeight: 400 }}
-                      to={`/exams/continue?id=${attemp.attempId}`}
-                    >
-                      Tiếp tục
-                    </Button>
-                  </div>
-                </div>
-              </CardBorder>
-            );
+            return <ContinueItem key={attemp.id} attemp={attemp} toggleMarkFavourite={toggleMarkFavourite} />;
           })}
         </div>
 
